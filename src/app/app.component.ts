@@ -1,10 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.css']
+  template: require('./app.component.html'),
+  styles: [require('./app.component.scss')],
+  encapsulation: ViewEncapsulation.None
 })
-export class AppComponent {
-  title = 'app works!';
+export class AppComponent implements AfterViewInit {
+  classes = "manMove up";
+  constructor() { }
+
+  ngAfterViewInit() {
+    console.log('hello');
+  }
+
+  changeDir() {
+    if (this.classes.indexOf('up') === -1)
+      this.classes = "manMove up";
+    else this.classes = "manMove down";
+  }
+
 }
