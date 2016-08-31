@@ -2,22 +2,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ApplicationRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { AppComponent } from './app.component';
-import { ManModule } from './man/man.module.ts';
+import { ManComponent } from './man.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    ManComponent
+  ],
+  exports: [
+    ManComponent
   ],
   imports: [
-    BrowserModule,
     CommonModule,
-    FormsModule,
-    ManModule
+    FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
 })
-export class AppModule {
+export class ManModule {
 
 }

@@ -1,23 +1,24 @@
 import { Component, AfterViewInit, ViewEncapsulation } from '@angular/core';
+import { iposition } from './interfaces/iposition';
 
 @Component({
-  selector: 'app-root',
-  template: require('./app.component.html'),
-  styles: [require('./app.component.scss')],
+  selector: 'app',
+  template: require('./app.html'),
+  styles: [require('./app.scss')],
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements AfterViewInit {
-  classes = "manMove up";
+  position: iposition = {x: 512, y: 384};
+  target: iposition = {x: 768, y: 300};
   constructor() { }
 
-  ngAfterViewInit() {
-    console.log('hello');
-  }
+  ngAfterViewInit() {}
 
-  changeDir() {
-    if (this.classes.indexOf('up') === -1)
-      this.classes = "manMove up";
-    else this.classes = "manMove down";
+  click(e) {
+
+    this.target = {x: e.clientX, y: 768 - e.clientY};
+    console.log( this.target);
+    console.log(e);
   }
 
 }

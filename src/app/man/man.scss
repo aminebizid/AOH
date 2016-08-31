@@ -1,0 +1,50 @@
+.man {
+  position: absolute;
+  &.move {
+    width: 31px;
+    height: 48px;
+    background-image: url(../../assets/img/man_31x48_move.png);
+    animation: move 1.5s steps(15, end) infinite;
+
+    &.a0 {
+      background-position-y: -192px;
+    }
+
+    &.a1 {
+      background-position-y: -144px;
+      transform: rotateY(180deg);
+    }
+
+    &.a2 {
+      background-position-y: -96px;
+      transform: rotateY(180deg);
+    }
+
+     &.a3 {
+      background-position-y: -48px;
+       transform: rotateY(180deg);
+    }
+
+    &.a4 {
+      background-position-y: 0px;
+    }
+
+    &.a5 {
+      background-position-y: -48px;
+    }
+
+    &.a6 {
+      background-position-y: -96px;
+    }
+
+    &.a7 {
+      background-position-y: -144px;
+    }
+
+
+    @keyframes move {
+      to { background-position-x: -465px; }
+    }
+
+  }
+}
